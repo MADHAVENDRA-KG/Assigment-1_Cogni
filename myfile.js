@@ -1,7 +1,7 @@
 const removed = require("stopwords").english;
 //Sentence segmentation
 function segmen(str) {
-  str = str.replace("?", ".");
+  str = str.replace(/[?]/g, ".");
   var a = str.split(".");
   a.pop();
   return a;
@@ -11,8 +11,8 @@ function segmen(str) {
 // segmen(str);
 
 function wordsegm(str) {
-  str = str.replace("?", "");
-  str = str.replace(".", "");
+  str = str.replace(/[?]/g, ".");
+  str = str.replace(/[.]/g, "");
   var b = str.split(" ");
   return b;
 }
@@ -20,8 +20,8 @@ function wordsegm(str) {
 // wordsegm(str);
 
 function removestp(str) {
-  str = str.replace("?", "");
-  str = str.replace(".", "");
+  str = str.replace(/[?]/g, ".");
+  str = str.replace(/[.]/g, "");
   const oldstr = str.split(" ");
   var r = "";
   oldstr.forEach(funku);
@@ -36,8 +36,8 @@ function removestp(str) {
 //remove duplicate from strings
 function uniquestr(str) {
   str = str.toLowerCase();
-  str = str.replace("?", "");
-  str = str.replace(".", "");
+  str = str.replace(/[?]/g, ".");
+  str = str.replace(/[.]/g, "");
   var arr = str.split(" ");
   function removeDuplicates(arr) {
     return [...new Set(arr)];
@@ -53,8 +53,8 @@ function uniquestr(str) {
 uniquestr("My name is madhav. yes my name madhav");
 //each  word of string reverse
 function reversestring(str) {
-  str = str.replace("?", "");
-  str = str.replace(".", "");
+  str = str.replace(/[?]/g, ".");
+  str = str.replace(/[.]/g, "");
   const arr = str.split(" ");
   var y = "";
   arr.forEach((el) => {
